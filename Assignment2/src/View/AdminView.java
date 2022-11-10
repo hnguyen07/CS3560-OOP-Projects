@@ -80,6 +80,7 @@ public class AdminView {
 		addUserButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent event) {
 				addUser(txtUserId.getText());
+				txtUserId.setText(null);
 			}
 		});
 
@@ -97,6 +98,7 @@ public class AdminView {
 		addGroupButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent event) {
 				addGroup(txtGroupId.getText());
+				txtGroupId.setText(null);
 			}
 		});
 

@@ -54,11 +54,12 @@ public class UserView {
 		followUserButton.setFont(new Font("Comic Sans MS", Font.PLAIN, 15));
 		// Follow a user using the text inputted in the txtTweet (JTextField)
 		followUserButton.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent event) {
+			public void actionPerformed(ActionEvent event) {				
 				if (followUserID.getText().isEmpty()) {
 					JOptionPane.showMessageDialog(null, "Please enter the user's ID!",
 							"Error", JOptionPane.ERROR_MESSAGE);
 				} else if (user.getID().equals(followUserID.getText())) {
+					followUserID.setText(null);					
 					JOptionPane.showMessageDialog(null, "You cannot follow yourself!",
 							"Error", JOptionPane.ERROR_MESSAGE);
 				} else {
@@ -77,6 +78,7 @@ public class UserView {
 					else {
 						user.followUser(followUserID.getText());
 					}
+					followUserID.setText(null);
 				}
 			}
 		});
@@ -104,6 +106,7 @@ public class UserView {
 		tweetPostButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent event) {
 				user.tweet(txtTweet.getText());
+				txtTweet.setText(null);
 			}
 		});
 
