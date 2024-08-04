@@ -71,9 +71,9 @@ public class Group implements SysEntry {
 	 * Traverses parent nodes until the root is found.
 	 */
 	public Group getRoot() {
-		Group root = parent;
-		while (!parent.getID().equalsIgnoreCase("root")) {
-			root = parent.getParent();
+		Group root = this;
+		while (!root.getID().equalsIgnoreCase("root")) {
+			root = root.getParent();
 		}
 		return root;
 	}
